@@ -7,7 +7,7 @@
         <VerticalStackLayout
             Padding="30,0"
             Spacing="25">
-          
+
             <Label
                 Text="Conta"
                 />
@@ -15,22 +15,22 @@
             <Entry
                 x:Name="AmountEntry"
                 Placeholder="Digite aqui o valor da conta"
-                
+                TextChanged="AmountEntry_TextChanged"
             />
-                                   
+
             <Label
              Text="Total:"
             />
 
             <Label
-             x:Name="TipLabel"
+             x:Name="TotalLabel"
              Text="0.00"
             />
             <Label
              Text="Gorjeta:"
             />
             <Label
-             x:Name="TotalLabel"
+             x:Name="TipLabel"
              Text="0.00"
             />
             <Label
@@ -42,13 +42,15 @@
             />
 
             <Slider
+                x:Name="TipSlider"
                 Maximum="70"
                 Minimum="0"
                 Value="20"
+                ValueChanged="TipSlider_ValueChanged"
                 />
 
             <Button x:Name="SetLowButton"  Text="15%" Clicked="SetLowButton_Clicked"
-                />
+               />
             <Button x:Name="SetHighButton" Text="20%" Clicked="SetHighButton_Clicked"
                 />
             <Button x:Name="RoundHighButton" Text="Arredondar para cima" Clicked="RoundHighButton_Clicked"
