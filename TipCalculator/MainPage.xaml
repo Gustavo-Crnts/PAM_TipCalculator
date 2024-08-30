@@ -47,6 +47,7 @@
                 Minimum="0"
                 Value="20"
                 ValueChanged="TipSlider_ValueChanged"
+                
                 />
 
             <Button x:Name="SetLowButton"  Text="15%" Clicked="SetLowButton_Clicked"
