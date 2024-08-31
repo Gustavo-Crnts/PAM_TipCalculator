@@ -7,17 +7,19 @@
         <VerticalStackLayout
             Padding="30,0"
             Spacing="25">
-
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="25">
             <Label
                 Text="Conta"
                 />
 
             <Entry
                 x:Name="AmountEntry"
+                Keyboard="Numeric"
                 Placeholder="Digite aqui o valor da conta"
                 TextChanged="AmountEntry_TextChanged"
             />
-
+            </HorizontalStackLayout>
+            <HorizontalStackLayout Spacing="25">
             <Label
              Text="Total:"
             />
@@ -26,6 +28,8 @@
              x:Name="TotalLabel"
              Text="0.00"
             />
+            </HorizontalStackLayout>
+            <HorizontalStackLayout Spacing="25">
             <Label
              Text="Gorjeta:"
             />
@@ -33,13 +37,16 @@
              x:Name="TipLabel"
              Text="0.00"
             />
-            <Label
+            </HorizontalStackLayout>
+            
+                <Label
              Text="Percentual da gorjeta:"
             />
             <Label
              x:Name="TipPercentLabel"
              Text="10%"
             />
+         
 
             <Slider
                 x:Name="TipSlider"
@@ -50,14 +57,22 @@
                 
                 />
 
-            <Button x:Name="SetLowButton"  Text="15%" Clicked="SetLowButton_Clicked"
+            <HorizontalStackLayout Spacing="25" HorizontalOptions="Center">
+                <Button x:Name="SetLowButton"  Text="15%" Clicked="SetLowButton_Clicked" WidthRequest="250"
                />
-            <Button x:Name="SetHighButton" Text="20%" Clicked="SetHighButton_Clicked"
+                <Button x:Name="SetHighButton" Text="20%" Clicked="SetHighButton_Clicked" WidthRequest="250"
                 />
-            <Button x:Name="RoundHighButton" Text="Arredondar para cima" Clicked="RoundHighButton_Clicked"
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout Spacing="25" HorizontalOptions="Center">
+
+                <Button x:Name="RoundHighButton" Text="Arredondar para cima" Clicked="RoundHighButton_Clicked" WidthRequest="250"
                 />
-            <Button x:Name="RoundLowButton" Text="Arredondar para baixo" Clicked="RoundLowButton_Clicked"
+                <Button x:Name="RoundLowButton" Text="Arredondar para baixo" Clicked="RoundLowButton_Clicked" WidthRequest="250"
                 />
+            </HorizontalStackLayout>
+
+
         </VerticalStackLayout>
     </ScrollView>
 

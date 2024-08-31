@@ -36,7 +36,7 @@ namespace TipCalculator
             valorTotal = Math.Ceiling(valorTotal);
 
             TipLabel.Text = valorDaGorjeta.ToString("C");
-            TipLabel.Text = valorTotal.ToString("C");
+            TotalLabel.Text = valorTotal.ToString("C");
         }
 
         private void RoundLowButton_Clicked(object sender, EventArgs e)
@@ -45,27 +45,27 @@ namespace TipCalculator
             valorTotal = Math.Floor(valorTotal);
 
             TipLabel.Text = valorDaGorjeta.ToString("C");
-            TipLabel.Text = valorTotal.ToString("C");
+            TotalLabel.Text = valorTotal.ToString("C");
         }
 
         private void TipSlider_ValueChanged(object sender, EventArgs e)
         {
-            TipPercentLabel.Text = TipSlider.Value.ToString("#") + "%";
+            TipPercentLabel.Text = TipSlider.Value.ToString("#.##") + "%";
 
             try
             {
 
                 //Pegar o valor inserido ex: 100
-                double Valor = Convert.ToDouble(AmountEntry.Text);
+                valor = Convert.ToDouble(AmountEntry.Text);
 
                 //Calcular o valor da gorjeta de acordo com a porcentagem
-                double ValorDaGorjeta = Valor * (TipSlider.Value / 100);
+                valorDaGorjeta = valor * (TipSlider.Value / 100);
 
                 //Calcular o valor total, sendo a soma do valor + a gorjeta
-                double ValorTotal = Valor + ValorDaGorjeta;
+                valorTotal = valor + valorDaGorjeta;
 
-                TotalLabel.Text = ValorTotal.ToString("C");
-                TipLabel.Text = ValorDaGorjeta.ToString("C");
+                TotalLabel.Text = valorTotal.ToString("C");
+                TipLabel.Text = valorDaGorjeta.ToString("C");
 
             }
 
@@ -88,16 +88,16 @@ namespace TipCalculator
             {
 
                 //Pegar o valor inserido ex: 100
-                double Valor = Convert.ToDouble(AmountEntry.Text);
+                 valor = Convert.ToDouble(AmountEntry.Text);
 
                 //Calcular o valor da gorjeta de acordo com a porcentagem
-                double ValorDaGorjeta = Valor * (TipSlider.Value / 100);
+                 valorDaGorjeta = valor * (TipSlider.Value / 100);
 
                 //Calcular o valor total, sendo a soma do valor + a gorjeta
-                double ValorTotal = Valor + ValorDaGorjeta;
+                 valorTotal = valor + valorDaGorjeta;
 
-                TotalLabel.Text = ValorTotal.ToString("C");
-                TipLabel.Text = ValorDaGorjeta.ToString("C");
+                TotalLabel.Text = valorTotal.ToString("C");
+                TipLabel.Text = valorDaGorjeta.ToString("C");
 
             }
 
@@ -107,6 +107,11 @@ namespace TipCalculator
                 Debug.WriteLine(ex.ToString());
                 
             }
+        }
+
+        private void SetLowButton_SizeChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
